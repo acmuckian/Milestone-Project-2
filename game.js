@@ -27,7 +27,7 @@ function showOption(option) {
 function selectOption(option) {
 
 }
-const textNodes = [
+const textNode = [
     {
         id: 1,
         text: "You have recently moved to a small village in rural Wales. You receive an invite for a party.",
