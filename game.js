@@ -1,5 +1,6 @@
 const textElement = document.getElementById("text");
 const optionButtons = document.getElementById("options");
+let state = {}
 function startGame () {
 state = {};
 showTextNode(1);
