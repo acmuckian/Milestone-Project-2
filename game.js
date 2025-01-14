@@ -20,7 +20,7 @@ optionButtonsElement.appendChild(button)
     }
 })
 function selectOption(option) {
-return: true
+return true
 }
 const textNodes = [
     {
@@ -39,5 +39,4 @@ const textNodes = [
     ]
 }
 ]
-
-startGame ()
+}
