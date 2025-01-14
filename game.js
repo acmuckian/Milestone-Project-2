@@ -8,9 +8,19 @@ function showTextNode(textNodeIndex) {
 const textNode = textNodes.find(textNode => textNode.id ===
     textNodeIndex)
     textElement.innerText = textNode.text
+    while (optionButtonsElement.firstChild) {
+        optionButtonsElementremoveChild(optionButtonsElement.firstChild)
 }
+textNode.options.forEach(option => {
+    if (showOption(option)) {
+const button = document.createElement('button')
+button.innerText = option.text
+button.addEventListener('click', () => selectOption(option))
+optionButtonsElement.appendChild(button)
+    }
+})
 function selectOption(option) {
-
+return: true
 }
 const textNodes = [
     {
