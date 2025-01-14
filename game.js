@@ -6,7 +6,18 @@ function startGame() {
     showTextNode(1)
 }
 function showTextNode(textNodeIndex) {
-    const textNode = [
+    const textNode = textNodes.find(textNode => text.id === textNodeIndex)
+    textElement.innerText = textNode.text
+    while (optionButtonsElement.firstChild) {
+        optionButtonsElement.removeChild(optionButtonsElement.firstChild)
+    }
+    textNode.options.forEach(option => {
+        if (showOption(option)) {
+
+        }
+    })
+}
+    const textNodes = [
         {
             id: 1,
             text: "You have recently moved to a small village in rural Wales. You receive an invite for a party.",
@@ -25,17 +36,7 @@ function showTextNode(textNodeIndex) {
         {
             id: 2
         }
-    ].find(textNode => text.id === textNodeIndex)
-    textElement.innerText = textNode.text
-    while (optionButtonsElement.firstChild) {
-        optionButtonsElement.removeChild(optionButtonsElement.firstChild)
-    }
-    textNode.options.forEach(option => {
-        if (showOption(option)) {
-
-        }
-    })
-}
+    ]
 function showOption(option) {
     const button = document.createElement('button')
     button.innerText = option.text
