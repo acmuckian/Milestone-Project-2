@@ -6,7 +6,26 @@ function startGame() {
     showTextNode(1)
 }
 function showTextNode(textNodeIndex) {
-    const textNode = textNodes.find(textNode => text.id === textNodeIndex)
+    const textNode = [
+        {
+            id: 1,
+            text: "You have recently moved to a small village in rural Wales. You receive an invite for a party.",
+            options: [
+                {
+                    text: 'RVSP',
+                    setState: { party: true },
+                    nextText: 2
+                },
+                {
+                    text: 'Ignore',
+                    nextText: 2
+                }
+            ]
+        },
+        {
+            id: 2
+        }
+    ].find(textNode => text.id === textNodeIndex)
     textElement.innerText = textNode.text
     while (optionButtonsElement.firstChild) {
         optionButtonsElement.removeChild(optionButtonsElement.firstChild)
@@ -27,24 +46,4 @@ function showOption(option) {
 function selectOption(option) {
 
 }
-const textNodes = [
-    {
-        id: 1,
-        text: "You have recently moved to a small village in rural Wales. You receive an invite for a party.",
-        options: [
-            {
-                text: 'RVSP',
-                setState: { party: true },
-                nextText: 2
-            },
-            {
-                text: 'Ignore',
-                nextText: 2
-            }
-        ]
-    },
-    {
-        id: 2
-    }
-]
 startGame()
